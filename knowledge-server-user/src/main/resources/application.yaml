@@ -1,0 +1,46 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: user-service
+  security:
+    user:
+      name: rwwr  # 自定义的用户名
+#      password: 250927  # 自定义的密码
+
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://${kn.db.host}:3306/knowlegge_user?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: ${kn.db.pw}
+mybatis-plus:
+  configuration:
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+  global-config:
+    db-config:
+      update-strategy: not_null
+      id-type: auto
+logging:
+  level:
+    cn.svcci: debug
+  pattern:
+    dateformat: HH:mm:ss:SSS
+  file:
+    path: "logs/${spring.application.name}"
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html  # 设置 Swagger UI 的路径
+    tags-sorter: alpha  # 标签排序
+    operations-sorter: alpha  # 操作排序
+  api-docs:
+    path: /v3/api-docs  # 设置 API 文档路径
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'  # 匹配所有路径
+      packages-to-scan:
+        - cn.svcci.user.controller  # 扫描 user.controller 包
+        - cn.svcci.damain.dto  # 扫描 sto 包
+

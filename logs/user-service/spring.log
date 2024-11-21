@@ -1,0 +1,181 @@
+13:51:34:141  INFO 19904 --- [user-service] [main] cn.svcci.user.UserApplication            : Starting UserApplication using Java 17.0.12 with PID 19904 (E:\development\java\projects\knowledgeBase\knowledge-server-user\target\classes started by rwwr in E:\development\java\projects\knowledgeBase)
+13:51:34:146 DEBUG 19904 --- [user-service] [main] cn.svcci.user.UserApplication            : Running with Spring Boot v3.3.5, Spring v6.1.14
+13:51:34:147  INFO 19904 --- [user-service] [main] cn.svcci.user.UserApplication            : The following 1 profile is active: "dev"
+13:51:34:991  INFO 19904 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+13:51:34:992  INFO 19904 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+13:51:35:012  INFO 19904 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 0 Elasticsearch repository interfaces.
+13:51:35:020  INFO 19904 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+13:51:35:021  INFO 19904 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+13:51:35:033  INFO 19904 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+13:51:35:626  INFO 19904 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+13:51:35:629  INFO 19904 --- [user-service] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+13:51:35:643  INFO 19904 --- [user-service] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+13:51:35:653  INFO 19904 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+13:51:35:654  INFO 19904 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+13:51:35:739  INFO 19904 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+13:51:35:739  INFO 19904 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1532 ms
+13:51:35:863  INFO 19904 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+13:51:36:217  INFO 19904 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@9f0fc36
+13:51:36:219  INFO 19904 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+13:51:36:257  INFO 19904 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+13:51:36:328  INFO 19904 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+13:51:36:368  INFO 19904 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+13:51:36:702  INFO 19904 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+13:51:37:096  INFO 19904 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+13:51:37:101  INFO 19904 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+13:51:37:435  WARN 19904 --- [user-service] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "cn.svcci.user.damain.entity.UserRole".
+13:51:37:435  WARN 19904 --- [user-service] [main] c.b.m.core.injector.DefaultSqlInjector   : class cn.svcci.user.damain.entity.UserRole ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+13:51:37:589  WARN 19904 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+13:51:38:578  INFO 19904 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+13:51:38:587  INFO 19904 --- [user-service] [main] cn.svcci.user.UserApplication            : Started UserApplication in 4.969 seconds (process running for 7.005)
+13:51:50:451  INFO 19904 --- [user-service] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+13:51:50:451  INFO 19904 --- [user-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+13:51:50:455  INFO 19904 --- [user-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+13:51:51:309  INFO 19904 --- [user-service] [http-nio-8080-exec-8] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 297 ms
+13:59:46:466  INFO 19904 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+13:59:46:469  INFO 19904 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+13:59:46:476  INFO 19904 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+14:51:08:621  INFO 20704 --- [user-service] [main] cn.svcci.user.UserApplication            : Starting UserApplication using Java 17.0.12 with PID 20704 (E:\development\java\projects\knowledgeBase\knowledge-server-user\target\classes started by rwwr in E:\development\java\projects\knowledgeBase)
+14:51:08:623 DEBUG 20704 --- [user-service] [main] cn.svcci.user.UserApplication            : Running with Spring Boot v3.3.5, Spring v6.1.14
+14:51:08:625  INFO 20704 --- [user-service] [main] cn.svcci.user.UserApplication            : The following 1 profile is active: "dev"
+14:51:09:378  INFO 20704 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+14:51:09:380  INFO 20704 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+14:51:09:397  INFO 20704 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Elasticsearch repository interfaces.
+14:51:09:405  INFO 20704 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+14:51:09:405  INFO 20704 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+14:51:09:414  INFO 20704 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+14:51:09:946  INFO 20704 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+14:51:09:948  INFO 20704 --- [user-service] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+14:51:09:951  INFO 20704 --- [user-service] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+14:51:09:959  INFO 20704 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+14:51:09:960  INFO 20704 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+14:51:10:030  INFO 20704 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+14:51:10:031  INFO 20704 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1349 ms
+14:51:10:127  INFO 20704 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+14:51:10:416  INFO 20704 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f883d90
+14:51:10:417  INFO 20704 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+14:51:10:456  INFO 20704 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+14:51:10:517  INFO 20704 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+14:51:10:557  INFO 20704 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+14:51:10:843  INFO 20704 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+14:51:11:219  INFO 20704 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+14:51:11:225  INFO 20704 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+14:51:11:528  WARN 20704 --- [user-service] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "cn.svcci.user.damain.entity.UserRole".
+14:51:11:531  WARN 20704 --- [user-service] [main] c.b.m.core.injector.DefaultSqlInjector   : class cn.svcci.user.damain.entity.UserRole ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+14:51:11:684  WARN 20704 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+14:51:12:580  INFO 20704 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+14:51:12:590  INFO 20704 --- [user-service] [main] cn.svcci.user.UserApplication            : Started UserApplication in 4.578 seconds (process running for 5.306)
+14:51:36:207  INFO 20704 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+14:51:36:209  INFO 20704 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+14:51:36:214  INFO 20704 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+15:14:36:421  INFO 27748 --- [user-service] [main] cn.svcci.user.UserApplication            : Starting UserApplication using Java 17.0.12 with PID 27748 (E:\development\java\projects\knowledgeBase\knowledge-server-user\target\classes started by rwwr in E:\development\java\projects\knowledgeBase)
+15:14:36:422 DEBUG 27748 --- [user-service] [main] cn.svcci.user.UserApplication            : Running with Spring Boot v3.3.5, Spring v6.1.14
+15:14:36:424  INFO 27748 --- [user-service] [main] cn.svcci.user.UserApplication            : The following 1 profile is active: "dev"
+15:14:37:125  INFO 27748 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+15:14:37:127  INFO 27748 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+15:14:37:148  INFO 27748 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 0 Elasticsearch repository interfaces.
+15:14:37:155  INFO 27748 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+15:14:37:156  INFO 27748 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:14:37:163  INFO 27748 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+15:14:37:585  INFO 27748 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+15:14:37:588  INFO 27748 --- [user-service] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+15:14:37:590  INFO 27748 --- [user-service] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+15:14:37:599  INFO 27748 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+15:14:37:599  INFO 27748 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+15:14:37:671  INFO 27748 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+15:14:37:671  INFO 27748 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1183 ms
+15:14:37:772  INFO 27748 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+15:14:38:010  INFO 27748 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4522d793
+15:14:38:012  INFO 27748 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+15:14:38:043  INFO 27748 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+15:14:38:088  INFO 27748 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+15:14:38:114  INFO 27748 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+15:14:38:397  INFO 27748 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+15:14:38:717  INFO 27748 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+15:14:38:721  INFO 27748 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:14:39:003  WARN 27748 --- [user-service] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "cn.svcci.user.damain.entity.UserRole".
+15:14:39:004  WARN 27748 --- [user-service] [main] c.b.m.core.injector.DefaultSqlInjector   : class cn.svcci.user.damain.entity.UserRole ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+15:14:39:144  WARN 27748 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:14:39:827  INFO 27748 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+15:14:39:834  INFO 27748 --- [user-service] [main] cn.svcci.user.UserApplication            : Started UserApplication in 3.888 seconds (process running for 4.47)
+15:18:58:340  INFO 27748 --- [user-service] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:18:58:341  INFO 27748 --- [user-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+15:18:58:342  INFO 27748 --- [user-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+15:18:58:964  INFO 27748 --- [user-service] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 198 ms
+15:19:50:825  INFO 27748 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+15:19:50:826  INFO 27748 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+15:19:50:831  INFO 27748 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+15:23:10:740  INFO 14312 --- [user-service] [main] cn.svcci.user.UserApplication            : Starting UserApplication using Java 17.0.12 with PID 14312 (E:\development\java\projects\knowledgeBase\knowledge-server-user\target\classes started by rwwr in E:\development\java\projects\knowledgeBase)
+15:23:10:743 DEBUG 14312 --- [user-service] [main] cn.svcci.user.UserApplication            : Running with Spring Boot v3.3.5, Spring v6.1.14
+15:23:10:744  INFO 14312 --- [user-service] [main] cn.svcci.user.UserApplication            : The following 1 profile is active: "dev"
+15:23:11:545  INFO 14312 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+15:23:11:547  INFO 14312 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+15:23:11:570  INFO 14312 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18 ms. Found 0 Elasticsearch repository interfaces.
+15:23:11:577  INFO 14312 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+15:23:11:578  INFO 14312 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:23:11:587  INFO 14312 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+15:23:12:119  INFO 14312 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+15:23:12:122  INFO 14312 --- [user-service] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+15:23:12:131  INFO 14312 --- [user-service] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+15:23:12:143  INFO 14312 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+15:23:12:143  INFO 14312 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+15:23:12:224  INFO 14312 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+15:23:12:224  INFO 14312 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1431 ms
+15:23:12:344  INFO 14312 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+15:23:12:690  INFO 14312 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2ab9e43e
+15:23:12:691  INFO 14312 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+15:23:12:728  INFO 14312 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+15:23:12:805  INFO 14312 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+15:23:12:850  INFO 14312 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+15:23:13:204  INFO 14312 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+15:23:13:618  INFO 14312 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+15:23:13:624  INFO 14312 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:23:13:976  WARN 14312 --- [user-service] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "cn.svcci.user.damain.entity.UserRole".
+15:23:13:976  WARN 14312 --- [user-service] [main] c.b.m.core.injector.DefaultSqlInjector   : class cn.svcci.user.damain.entity.UserRole ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+15:23:14:148  WARN 14312 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:23:15:104  INFO 14312 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+15:23:15:113  INFO 14312 --- [user-service] [main] cn.svcci.user.UserApplication            : Started UserApplication in 4.964 seconds (process running for 5.741)
+15:23:19:732  INFO 14312 --- [user-service] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:23:19:733  INFO 14312 --- [user-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+15:23:19:734  INFO 14312 --- [user-service] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+15:23:20:487  INFO 14312 --- [user-service] [http-nio-8080-exec-9] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 283 ms
+15:25:55:875  INFO 14312 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+15:25:55:877  INFO 14312 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+15:25:55:883  INFO 14312 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+15:25:59:708  INFO 17968 --- [user-service] [main] cn.svcci.user.UserApplication            : Starting UserApplication using Java 17.0.12 with PID 17968 (E:\development\java\projects\knowledgeBase\knowledge-server-user\target\classes started by rwwr in E:\development\java\projects\knowledgeBase)
+15:25:59:710 DEBUG 17968 --- [user-service] [main] cn.svcci.user.UserApplication            : Running with Spring Boot v3.3.5, Spring v6.1.14
+15:25:59:711  INFO 17968 --- [user-service] [main] cn.svcci.user.UserApplication            : The following 1 profile is active: "dev"
+15:26:00:491  INFO 17968 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+15:26:00:494  INFO 17968 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+15:26:00:518  INFO 17968 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 Elasticsearch repository interfaces.
+15:26:00:527  INFO 17968 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+15:26:00:528  INFO 17968 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+15:26:00:538  INFO 17968 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+15:26:01:096  INFO 17968 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+15:26:01:099  INFO 17968 --- [user-service] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+15:26:01:102  INFO 17968 --- [user-service] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+15:26:01:112  INFO 17968 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+15:26:01:112  INFO 17968 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+15:26:01:186  INFO 17968 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+15:26:01:186  INFO 17968 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1421 ms
+15:26:01:300  INFO 17968 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+15:26:01:549  INFO 17968 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3375b118
+15:26:01:551  INFO 17968 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+15:26:01:585  INFO 17968 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+15:26:01:656  INFO 17968 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+15:26:01:700  INFO 17968 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+15:26:02:038  INFO 17968 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+15:26:02:370  INFO 17968 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+15:26:02:374  INFO 17968 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+15:26:02:666  WARN 17968 --- [user-service] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "cn.svcci.user.damain.entity.UserRole".
+15:26:02:666  WARN 17968 --- [user-service] [main] c.b.m.core.injector.DefaultSqlInjector   : class cn.svcci.user.damain.entity.UserRole ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+15:26:02:813  WARN 17968 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+15:26:03:549  INFO 17968 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+15:26:03:558  INFO 17968 --- [user-service] [main] cn.svcci.user.UserApplication            : Started UserApplication in 4.396 seconds (process running for 5.073)
+15:26:06:956  INFO 17968 --- [user-service] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+15:26:06:957  INFO 17968 --- [user-service] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+15:26:06:958  INFO 17968 --- [user-service] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+15:26:07:622  INFO 17968 --- [user-service] [http-nio-8080-exec-10] o.springdoc.api.AbstractOpenApiResource  : Init duration for springdoc-openapi is: 239 ms
+16:07:05:792  INFO 17968 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+16:07:05:803  INFO 17968 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+16:07:05:813  INFO 17968 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

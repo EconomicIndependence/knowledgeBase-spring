@@ -1,0 +1,6 @@
+server:
+  port: 8080
+kn:
+  db:
+    host: localhost
+    pw: 250927 # 修改为本地MySQL服务器中的MySQL密码
