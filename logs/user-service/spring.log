@@ -190,3 +190,38 @@
 17:10:35:798  INFO 5212 --- [user-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 17:10:35:798  INFO 5212 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 17:10:35:806  INFO 5212 --- [user-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+17:12:37:836  INFO 13356 --- [user-service] [main] cn.svcci.user.UserApplication            : Starting UserApplication using Java 17.0.12 with PID 13356 (E:\development\java\projects\knowledgeBase\knowledge-server-user\target\classes started by rwwr in E:\development\java\projects\knowledgeBase)
+17:12:37:837 DEBUG 13356 --- [user-service] [main] cn.svcci.user.UserApplication            : Running with Spring Boot v3.3.5, Spring v6.1.14
+17:12:37:838  INFO 13356 --- [user-service] [main] cn.svcci.user.UserApplication            : The following 1 profile is active: "dev"
+17:12:37:874  WARN 13356 --- [user-service] [main] c.a.c.n.c.NacosConfigDataLoader          : [Nacos Config] config[dataId=nacos-config-example.properties, group=DEFAULT_GROUP] is empty
+17:12:38:460  INFO 13356 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+17:12:38:461  INFO 13356 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Elasticsearch repositories in DEFAULT mode.
+17:12:38:478  INFO 13356 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 14 ms. Found 0 Elasticsearch repository interfaces.
+17:12:38:486  INFO 13356 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+17:12:38:487  INFO 13356 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+17:12:38:494  INFO 13356 --- [user-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+17:12:38:633  INFO 13356 --- [user-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=639b2cda-020d-3a45-98de-966b0e1d70f6
+17:12:38:915  INFO 13356 --- [user-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+17:12:38:917  INFO 13356 --- [user-service] [main] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.4].
+17:12:38:919  INFO 13356 --- [user-service] [main] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+17:12:38:928  INFO 13356 --- [user-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+17:12:38:928  INFO 13356 --- [user-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+17:12:38:993  INFO 13356 --- [user-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+17:12:38:993  INFO 13356 --- [user-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1117 ms
+17:12:39:101  INFO 13356 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+17:12:39:308  INFO 13356 --- [user-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@dbda472
+17:12:39:309  INFO 13356 --- [user-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+17:12:39:335  WARN 13356 --- [user-service] [Thread-3] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Start destroying Publisher
+17:12:39:335  WARN 13356 --- [user-service] [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Start destroying common HttpClient
+17:12:39:336  WARN 13356 --- [user-service] [Thread-3] c.a.nacos.common.notify.NotifyCenter     : [NotifyCenter] Destruction of the end
+17:12:39:336  WARN 13356 --- [user-service] [Thread-1] c.a.n.common.http.HttpClientBeanHolder   : [HttpClientBeanHolder] Destruction of the end
+17:12:39:343  INFO 13356 --- [user-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+17:12:39:389  INFO 13356 --- [user-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+17:12:39:417  INFO 13356 --- [user-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+17:12:39:665  INFO 13356 --- [user-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+17:12:39:969  INFO 13356 --- [user-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+17:12:39:974  INFO 13356 --- [user-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+17:12:40:220  WARN 13356 --- [user-service] [main] c.b.m.core.metadata.TableInfoHelper      : Can not find table primary key in Class: "cn.svcci.user.damain.entity.UserRole".
+17:12:40:220  WARN 13356 --- [user-service] [main] c.b.m.core.injector.DefaultSqlInjector   : class cn.svcci.user.damain.entity.UserRole ,Not found @TableId annotation, Cannot use Mybatis-Plus 'xxById' Method.
+17:12:40:348  WARN 13356 --- [user-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+17:12:41:713  INFO 13356 --- [user-service] [main] o.s.cloud.commons.util.InetUtils         : Cannot determine local hostname
