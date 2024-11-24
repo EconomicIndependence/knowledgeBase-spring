@@ -7,6 +7,7 @@
         <groupId>cn.svcci</groupId>
         <artifactId>knowledgeBase</artifactId>
         <version>0.0.1-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>knowledge-server-user</artifactId>
@@ -15,30 +16,9 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <mybatis-plus.version>3.5.9</mybatis-plus.version>
-        <knife4j.version>4.4.0</knife4j.version>
-
     </properties>
 
     <dependencies>
-<!--        mybatis-plus 依赖-->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
-            <version>${mybatis-plus.version}</version>
-        </dependency>
-<!--        lombok 依赖-->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <scope>provided</scope>
-        </dependency>
-<!--        knife4j 依赖-->
-        <dependency>
-            <groupId>com.github.xiaoymin</groupId>
-            <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
-            <version>${knife4j.version}</version>
-        </dependency>
 
 <!--        spring-boot-starter-validation作用:提供数据校验功能-->
         <dependency>

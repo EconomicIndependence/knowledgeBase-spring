@@ -1,12 +1,11 @@
 server:
-  port: 8080
-
+  port: 8081
 spring:
   config:
     import:
       - nacos:nacos-config-example.properties?refreshEnabled=true  # 从 Nacos 获取配置文件，并启用刷新功能
   application:
-    name: user-service  # 服务名称
+    name: file-service  # 服务名称
   profiles:
     active: dev
 

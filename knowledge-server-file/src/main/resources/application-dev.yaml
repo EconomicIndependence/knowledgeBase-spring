@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
 kn:
   db:
     host: localhost
@@ -9,5 +9,5 @@ kn:
     port: 8848
 
   log:
-    name: user #配置日志扫描包名
+    name: file #配置日志扫描包名等
 
