@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@TableName("user_roles")
+@TableName("user_role")
 public class UserRole {
 
     @TableField("user_id")

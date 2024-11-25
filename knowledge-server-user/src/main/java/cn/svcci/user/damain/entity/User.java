@@ -14,7 +14,7 @@ import java.time.LocalDateTime;
 @Data  // 自动生成 getters 和 setters
 @NoArgsConstructor  // 自动生成无参构造器
 @AllArgsConstructor  // 自动生成全参构造器
-@TableName("users")
+@TableName("user")
 public class User {
 
     @TableId

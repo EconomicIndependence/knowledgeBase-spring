@@ -3,7 +3,7 @@ package cn.svcci.user.service.impl;
 import cn.svcci.user.damain.entity.User;
 import cn.svcci.user.damain.entity.UserRole;
 import cn.svcci.user.mapper.UserRoleMapper;
-import cn.svcci.user.result.Result;
+import cn.svcci.common.response.Result;
 import cn.svcci.user.service.UserRoleService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;

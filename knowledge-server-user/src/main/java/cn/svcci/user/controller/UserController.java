@@ -2,14 +2,11 @@ package cn.svcci.user.controller;
 
 import cn.svcci.user.damain.dto.*;
 import cn.svcci.user.damain.entity.User;
-import cn.svcci.user.mapper.UserMapper;
-import cn.svcci.user.result.Result;
+import cn.svcci.common.response.Result;
 import cn.svcci.user.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/user")

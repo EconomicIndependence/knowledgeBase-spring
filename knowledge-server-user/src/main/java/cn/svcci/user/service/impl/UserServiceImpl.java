@@ -3,7 +3,7 @@ package cn.svcci.user.service.impl;
 import cn.svcci.user.damain.dto.*;
 import cn.svcci.user.damain.entity.User;
 import cn.svcci.user.mapper.UserMapper;
-import cn.svcci.user.result.Result;
+import cn.svcci.common.response.Result;
 import cn.svcci.user.service.UserRoleService;
 import cn.svcci.user.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;

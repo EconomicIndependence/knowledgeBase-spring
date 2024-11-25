@@ -10,12 +10,13 @@ import java.time.LocalDateTime;
 /**
  * 文件信息实体类
  * 映射数据库的 file_info 表
+ *
  */
 @Data
 @TableName("file_info")
-public class FileInfo {
+public class FileInfoDo {
     @TableId
-    private Long id; // 文件唯一标识
+    private String fileId; // 文件唯一标识
     private Long userId; // 上传者用户 ID
     private String fileName; // 文件名
     private String filePath; // 文件存储路径

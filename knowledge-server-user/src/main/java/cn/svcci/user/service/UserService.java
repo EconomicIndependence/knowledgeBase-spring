@@ -2,7 +2,7 @@ package cn.svcci.user.service;
 
 import cn.svcci.user.damain.dto.*;
 import cn.svcci.user.damain.entity.User;
-import cn.svcci.user.result.Result;
+import cn.svcci.common.response.Result;
 import jakarta.validation.Valid;
 
 public interface UserService{

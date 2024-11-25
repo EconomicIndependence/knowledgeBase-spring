@@ -1,4 +1,4 @@
-package cn.svcci.user.result;
+package cn.svcci.common.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

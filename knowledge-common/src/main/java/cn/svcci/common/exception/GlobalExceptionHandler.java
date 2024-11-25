@@ -1,6 +1,6 @@
-package cn.svcci.user.handler;
+package cn.svcci.common.exception;
 
-import cn.svcci.user.result.Result;
+import cn.svcci.common.response.Result;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
