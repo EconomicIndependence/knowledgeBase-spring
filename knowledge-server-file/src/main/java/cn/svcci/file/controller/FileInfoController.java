@@ -26,14 +26,18 @@ public class FileInfoController {
     public FileInfoController(FileInfoService fileInfoService) {
         this.fileInfoService = fileInfoService;
     }
+
+
     /**
      *
      * 查询文件
      */
     @GetMapping("/{fileId}")
     public Result<DocumentsVO> getFile(@PathVariable("fileId") String fileId) {
+
         return fileInfoService.getFileById(fileId);
     }
+
     /**
      * 查询全部文件接口
      */
@@ -41,6 +45,12 @@ public class FileInfoController {
     public Result<List<DocumentsVO>> getAllFiles(Long userId) {
 
         return fileInfoService.listAllFiles(userId);
+    }
+
+    @PutMapping("/updateFile")
+    public Result<String> putFileInfo(Long userId) {
+
+        return fileInfoService.putFileInfo(userId);
     }
 
     /**

@@ -1,13 +1,12 @@
 package cn.svcci.file.controller;
 
+import cn.svcci.common.response.Result;
 import cn.svcci.file.damain.dto.FileUploadRequestDto;
-import cn.svcci.file.result.Result;
+
 import cn.svcci.file.service.FileUploadService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * 文件上传控制器
@@ -21,6 +20,7 @@ public class FileUploadController {
 
     @Autowired
     public FileUploadController(FileUploadService fileUploadService) {
+
         this.fileUploadService = fileUploadService;
     }
 
@@ -30,8 +30,13 @@ public class FileUploadController {
      * @return 操作结果
      */
     @PostMapping("/oss")
-    public Result<String> uploadFileOss(@RequestBody FileUploadRequestDto file) {
-        return fileUploadService.uploadFileOss(file);
+    public Result<String> uploadFileOss( @RequestPart("file") MultipartFile file,
+                                         @RequestPart("userId") Long userId) {
+        // TODO: 封装请求参数
+        FileUploadRequestDto fileUploadRequestDto = new FileUploadRequestDto();
+        fileUploadRequestDto.setFile(file);
+        fileUploadRequestDto.setUserId(userId);
+        return fileUploadService.uploadFileOss(fileUploadRequestDto);
     }
 
     /**
@@ -41,6 +46,7 @@ public class FileUploadController {
      */
     @PostMapping("/local")
     public Result<String> uploadFileLocal(@RequestBody FileUploadRequestDto file) {
+
         return fileUploadService.uploadFileLocal(file);
     }
 }

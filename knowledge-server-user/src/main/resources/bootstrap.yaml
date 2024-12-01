@@ -4,17 +4,16 @@ spring:
   profiles:
     active: dev
 
-
   cloud:
     nacos:
       server-addr: ${kn.nacos.host}:${kn.nacos.port}  # Nacos 服务器地址
       config:
+        namespace: dev  # 配置文件所在的命名空间（dev）
+        shared-configs:
+          - dataId: common-config.yml  # 配置文件的 Data ID
+            refresh: true  # 是否开启动态刷新
         import-check:
           enabled: true  # 启用导入检查
-        namespace: dev  # 命名空间
-        server-addr: ${kn.nacos.host}:${kn.nacos.port}  # Nacos 配置中心地址
-        shared-configs:
-          - dataId: common-config.yml
-            refresh: true  # 开启动态刷新
       discovery:
         server-addr: ${kn.nacos.host}:${kn.nacos.port}  # Nacos 注册中心地址
+

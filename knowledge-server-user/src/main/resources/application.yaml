@@ -1,6 +1,7 @@
 server:
   port: 8080
 
+
 spring:
   config:
     import:
@@ -15,6 +16,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: ${kn.db.pw}
+
 #mybatis-plus:
 #  configuration:
 #    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
@@ -22,8 +24,10 @@ spring:
 #    db-config:
 #      update-strategy: not_null
 #      id-type: auto
+
 logging:
   level:
+    org.springframework: DEBUG
     cn.svcci: debug
   pattern:
     dateformat: HH:mm:ss:SSS

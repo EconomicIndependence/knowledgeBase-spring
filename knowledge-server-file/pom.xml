@@ -19,6 +19,12 @@
     </properties>
 
     <dependencies>
+<!--        阿里云对象存储 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>aliyun-oss-spring-boot-starter</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>cn.svcci</groupId>
             <artifactId>knowledge-common</artifactId>
