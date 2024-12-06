@@ -1,5 +1,7 @@
 package cn.svcci.file.service.impl;
 
+import cn.svcci.api.client.UserServiceFeignClient;
+import cn.svcci.api.dto.UserDto;
 import cn.svcci.common.response.Result;
 import cn.svcci.file.config.OssConfig;
 import cn.svcci.file.damain.dto.FileUploadRequestDto;
@@ -11,7 +13,6 @@ import com.aliyun.oss.OSS;
 import com.aliyun.oss.model.ObjectMetadata;
 import com.aliyun.oss.model.PutObjectRequest;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.tomcat.jni.FileInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,13 +25,16 @@ import java.time.LocalDateTime;
 public class FileUploadServiceImpl implements FileUploadService {
 
 
+
+    private final UserServiceFeignClient userServiceFeignClient;
     private final OSS ossClient;  // 注入 OSSClient
     private final FileValidator fileValidator;  // 注入文件验证器
     private final OssConfig ossConfig;  // 注入配置类，获取 bucketName 配置
     private final FileInfoService fileInfoService;  // 注入文件信息服务
 
     @Autowired
-    public FileUploadServiceImpl(OSS ossClient, FileValidator fileValidator, OssConfig ossConfig, FileInfoService fileInfoService) {
+    public FileUploadServiceImpl(UserServiceFeignClient userServiceFeignClient, OSS ossClient, FileValidator fileValidator, OssConfig ossConfig, FileInfoService fileInfoService) {
+        this.userServiceFeignClient = userServiceFeignClient;
         this.ossClient = ossClient;
         this.fileValidator = fileValidator;
         this.ossConfig = ossConfig;
@@ -41,14 +45,23 @@ public class FileUploadServiceImpl implements FileUploadService {
     public Result<String> uploadFileOss(FileUploadRequestDto fileDto) {
 
         MultipartFile file = fileDto.getFile();
-        if (!fileValidator.isValidFile(file)) {
+        if (fileValidator.isInvalidFile(file)) {
             return Result.error("文件格式不支持");
         }
 
         try (InputStream inputStream = file.getInputStream()) {
+            // 调用 Feign Client 查询用户信息
+            log.info("查询用户信息");
+            Result<UserDto> resultUserDto = userServiceFeignClient.queryUserProfile(fileDto.getUserId());
+
+            if (!Result.isSuccess(resultUserDto)) {
+                log.error("查询用户信息失败：{}", resultUserDto.getMsg());
+                return Result.error("查询用户信息失败");
+            }
+            String username = resultUserDto.getData().getUsername();
             // 设置文件存储路径
             String fileName = file.getOriginalFilename();
-            String filePath = "uploads/" + fileName;  // 存储路径
+            String filePath = "uploads/"+ username + "/" + fileName;  // 存储路径
 
             // 创建上传请求
             PutObjectRequest putObjectRequest = new PutObjectRequest(ossConfig.getBucketName(), filePath, inputStream);
@@ -64,11 +77,14 @@ public class FileUploadServiceImpl implements FileUploadService {
             // 获取文件的 URL（OSS 的 URL 结构）
             String ossUrl = "https://" + ossConfig.getBucketName() + "." + ossConfig.getEndpoint() + "/" + filePath;
             // 关闭 OSSClient
-            ossClient.shutdown();
+//            ossClient.shutdown();
             log.info("文件上传成功，URL: {}", ossUrl);
-//          TODO: 保存文件信息到数据库
+//          TODO: 有bug文件上传到了阿里云成功，但文件内容是不合法的，错误已经抛出
             // 文件上传成功后，保存文件元数据
+
+
             FileInfoDo fileInfo = new FileInfoDo();
+            fileInfo.setUserName(username);
             fileInfo.setFileName(file.getOriginalFilename());// 文件名
             fileInfo.setFileSize(file.getSize());// 文件大小
             fileInfo.setFileType(file.getContentType());// 文件类型
@@ -79,8 +95,6 @@ public class FileUploadServiceImpl implements FileUploadService {
 
             // 返回文件的 URL
             return Result.success(ossUrl);
-
-
 
         } catch (IOException e) {
             log.error("上传文件时发生错误：", e);
@@ -95,7 +109,7 @@ public class FileUploadServiceImpl implements FileUploadService {
     public Result<String> uploadFileLocal(FileUploadRequestDto fileDto) {
 
         MultipartFile file = fileDto.getFile();
-        if (!fileValidator.isValidFile(file)) {
+        if (fileValidator.isInvalidFile(file)) {
             return Result.error("文件格式不支持");
         }
 

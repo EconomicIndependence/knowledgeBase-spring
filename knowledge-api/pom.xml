@@ -7,11 +7,10 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>cn.svcci.file</groupId>
-    <artifactId>knowledge-server-file</artifactId>
+    <artifactId>knowledge-api</artifactId>
     <packaging>jar</packaging>
 
-    <name>knowledge-server-file</name>
+    <name>knowledge-api</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -19,28 +18,35 @@
     </properties>
 
     <dependencies>
-<!--        阿里云对象存储 -->
         <dependency>
-            <groupId>com.alibaba.cloud</groupId>
-            <artifactId>aliyun-oss-spring-boot-starter</artifactId>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+
+        </dependency>
+        <!--        Feign Client-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+        <!--        负载均衡器-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+        </dependency>
+        <!--        okhttp连接池-->
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-okhttp</artifactId>
         </dependency>
 
         <dependency>
             <groupId>cn.svcci</groupId>
             <artifactId>knowledge-common</artifactId>
             <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>3.8.1</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>cn.svcci</groupId>
-            <artifactId>knowledge-api</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
+
     </dependencies>
 </project>

@@ -40,5 +40,11 @@ public class Result<T> implements Serializable {
         return result;
     }
 
+    // 静态方法：判断是否成功
+    public static boolean isSuccess(Result<?> result) {
+        // 逻辑：null检查 + code必须为0
+        return result != null && result.getCode() != null && result.getCode() == 0;
+    }
+
 
 }

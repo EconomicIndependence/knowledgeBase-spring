@@ -1,5 +1,7 @@
 package cn.svcci.user.service.impl;
 
+import cn.svcci.api.dto.UserDto;
+import cn.svcci.user.converter.UserConverter;
 import cn.svcci.user.damain.dto.*;
 import cn.svcci.user.damain.entity.User;
 import cn.svcci.user.mapper.UserMapper;
@@ -154,26 +156,30 @@ public class  UserServiceImpl extends ServiceImpl<UserMapper, User> implements U
     }
     //系统界面查询用户信息
     @Override
-    public Result<User> queryUserProfile(UserQueryRequestDto request) {
+    public Result<UserDto> queryUserProfile(UserQueryRequestDto request) {
 
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         queryWrapper.eq("id", request.getUserId());  // 支持通过id查询
 
         User user = userMapper.selectOne(queryWrapper);  // 查询单个用户
 
+
+
         // 如果找到了用户，返回结果，否则返回未找到的提示
         if (user != null) {
-            return Result.success(user);
+            // 将用户信息转换为 DTO
+            UserDto userDto = UserConverter.toUserDto(user);
+            return Result.success(userDto);
         } else {
             return Result.error("未找到匹配的用户");
         }
-        //解析主键更快，下面没必要拼接条件
-        //.eq("email", request.getEmail())
+
+    }
+    //解析主键更快，下面没必要拼接条件
+    //.eq("email", request.getEmail())
 //                .or()  // 或条件
 //                .eq("username", request.getUsername())  // 支持通过用户名进行查询
 //                .or()
-
-    }
 
     // 用户修改密码
     @Override

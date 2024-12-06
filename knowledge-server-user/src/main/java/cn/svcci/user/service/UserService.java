@@ -1,5 +1,6 @@
 package cn.svcci.user.service;
 
+import cn.svcci.api.dto.UserDto;
 import cn.svcci.user.damain.dto.*;
 import cn.svcci.user.damain.entity.User;
 import cn.svcci.common.response.Result;
@@ -15,7 +16,7 @@ public interface UserService extends IService<User> {
     //用户更新方法
     Result<String> updateUserProfile(@Valid UserProfileUpdateRequestDto request);
 
-    Result<User> queryUserProfile(@Valid UserQueryRequestDto request);
+    Result<UserDto> queryUserProfile(@Valid UserQueryRequestDto request);
 
     Result<String> changePassword(@Valid UserChangePasswordRequestDto request);
 }

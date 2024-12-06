@@ -1,8 +1,9 @@
 package cn.svcci.user.controller;
 
-import cn.svcci.user.damain.dto.*;
-import cn.svcci.user.damain.entity.User;
+import cn.svcci.api.dto.UserDto;
+
 import cn.svcci.common.response.Result;
+import cn.svcci.user.damain.dto.*;
 import cn.svcci.user.service.UserService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,7 +42,7 @@ public class UserController {
 
     // 用户信息查询
     @GetMapping("/profile")
-    public Result<User> queryUserProfile(@Valid UserQueryRequestDto request) {
+    public Result<UserDto> queryUserProfile(@Valid UserQueryRequestDto request) {
 
         return userService.queryUserProfile(request);
 

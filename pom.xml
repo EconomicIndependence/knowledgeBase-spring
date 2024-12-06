@@ -31,6 +31,7 @@
         <module>knowledge-common</module>
         <module>knowledge-server-user</module>
         <module>knowledge-server-file</module>
+        <module>knowledge-api</module>
     </modules>
     <scm>
         <connection/>
@@ -133,6 +134,7 @@
             <version>${jjwt}</version>
             <scope>runtime</scope>
         </dependency>
+
 
         <!--        // 引入mysql-connector-java依赖，该依赖包含了mysql的驱动程序。-->
         <dependency>
