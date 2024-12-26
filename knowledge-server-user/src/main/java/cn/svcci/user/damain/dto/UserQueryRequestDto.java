@@ -14,7 +14,7 @@ import lombok.Data;
 @Data
 public class UserQueryRequestDto {
 
-    @NotNull(message = "userId不能为空")
+//    @NotNull(message = "userId不能为空")
     private Long userId;      // 用户ID，必须上传
 //    private String username;  // 用户名，可选
 //    private String email;     // 用户邮箱，可选

@@ -1,6 +1,7 @@
 package cn.svcci.file.service.impl;
 
 import cn.svcci.common.response.Result;
+import cn.svcci.file.converter.FileInfoConverter;
 import cn.svcci.file.damain.entity.FileInfoDo;
 import cn.svcci.file.damain.vo.DocumentsVO;
 import cn.svcci.file.mapper.FileInfoDoMapper;
@@ -44,15 +45,14 @@ public class FileInfoServiceImpl extends ServiceImpl<FileInfoDoMapper, FileInfoD
         // 执行查询
         List<FileInfoDo> fileInfoList = fileInfoDoMapper.selectList(queryWrapper);
         // 将查询结果转换为 VO 对象
-        List<DocumentsVO> documentsVOList = fileInfoList.stream()
-                .map(fileInfo -> new DocumentsVO(fileInfo.getFileName(), fileInfo.getFilePath(),fileInfo.getUploadTime()))
-                .collect(Collectors.toList());
+        List<DocumentsVO> documentsVOList = FileInfoConverter.toDocumentsVOList(fileInfoList);
 
         // 返回封装的结果
         return Result.success(documentsVOList);
     }
 
-    // 删除文件
+    // 删除文件元数据
+    // TODO: 文件本体关联删除待实现
     @Override
     public Result<String> deleteFile(String fileId) {
         int rows = fileInfoDoMapper.deleteById(fileId);
@@ -64,7 +64,7 @@ public class FileInfoServiceImpl extends ServiceImpl<FileInfoDoMapper, FileInfoD
     }
 
     @Override
-    public Result<String> putFileInfo(Long userId) {
+    public Result<String> putFileInfo(String fileId) {
 
         return Result.success("文件元数据修改成功");
     }

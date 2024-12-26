@@ -11,11 +11,12 @@ public interface UserServiceFeignClient {
 
     /**
      * 查询用户信息
-     * @param userId
+     *
      * @return
+     * 请求拦截器中添加了请求头
      */
     @GetMapping("/api/user/profile")
-    Result<UserDto> queryUserProfile(@RequestParam("userId") Long userId);
+    Result<UserDto> queryUserProfile();
 
 
 }

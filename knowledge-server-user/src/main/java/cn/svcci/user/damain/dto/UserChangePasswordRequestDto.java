@@ -13,8 +13,7 @@ import lombok.Data;
 @Data
 public class UserChangePasswordRequestDto {
 
-    @NotNull(message = "用户id是必填项")
-    private Long id;  // 用户 ID
+
 
     @NotBlank(message = "当前密码是必填项")
     @Size(min = 8, message = "密码必须至少包含 8 个字符")

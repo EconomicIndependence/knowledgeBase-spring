@@ -34,7 +34,7 @@ public interface FileInfoService extends IService<FileInfoDo> {
     Result<String> deleteFile(String fileId);
 
 
-    Result<String> putFileInfo(Long userId);
+    Result<String> putFileInfo(String fileId);
 
 
 

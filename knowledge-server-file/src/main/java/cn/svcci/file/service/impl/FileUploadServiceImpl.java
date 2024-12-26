@@ -48,16 +48,16 @@ public class FileUploadServiceImpl implements FileUploadService {
         if (fileValidator.isInvalidFile(file)) {
             return Result.error("文件格式不支持");
         }
+        // 调用 Feign Client 查询用户信息
+        log.info("查询用户信息");
+        Result<UserDto> resultUserDto = userServiceFeignClient.queryUserProfile();
+        if (!Result.isSuccess(resultUserDto)) {
+            log.error("查询用户信息失败：{}", resultUserDto.getMsg());
+            return Result.error("查询用户信息失败");
+        }
 
         try (InputStream inputStream = file.getInputStream()) {
-            // 调用 Feign Client 查询用户信息
-            log.info("查询用户信息");
-            Result<UserDto> resultUserDto = userServiceFeignClient.queryUserProfile(fileDto.getUserId());
 
-            if (!Result.isSuccess(resultUserDto)) {
-                log.error("查询用户信息失败：{}", resultUserDto.getMsg());
-                return Result.error("查询用户信息失败");
-            }
             String username = resultUserDto.getData().getUsername();
             // 设置文件存储路径
             String fileName = file.getOriginalFilename();
@@ -79,9 +79,8 @@ public class FileUploadServiceImpl implements FileUploadService {
             // 关闭 OSSClient
 //            ossClient.shutdown();
             log.info("文件上传成功，URL: {}", ossUrl);
-//          TODO: 有bug文件上传到了阿里云成功，但文件内容是不合法的，错误已经抛出
-            // 文件上传成功后，保存文件元数据
 
+            // 文件上传成功后，保存文件元数据
 
             FileInfoDo fileInfo = new FileInfoDo();
             fileInfo.setUserName(username);

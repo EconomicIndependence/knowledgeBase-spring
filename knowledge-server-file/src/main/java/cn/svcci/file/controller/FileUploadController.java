@@ -1,6 +1,7 @@
 package cn.svcci.file.controller;
 
 import cn.svcci.common.response.Result;
+import cn.svcci.common.utils.UserContext;
 import cn.svcci.file.damain.dto.FileUploadRequestDto;
 
 import cn.svcci.file.service.FileUploadService;
@@ -30,12 +31,11 @@ public class FileUploadController {
      * @return 操作结果
      */
     @PostMapping("/oss")
-    public Result<String> uploadFileOss( @RequestPart("file") MultipartFile file,
-                                         @RequestPart("userId") Long userId) {
+    public Result<String> uploadFileOss( @RequestPart("file") MultipartFile file) {
         // TODO: 封装请求参数
         FileUploadRequestDto fileUploadRequestDto = new FileUploadRequestDto();
         fileUploadRequestDto.setFile(file);
-        fileUploadRequestDto.setUserId(userId);
+        fileUploadRequestDto.setUserId(UserContext.getUserId());
         return fileUploadService.uploadFileOss(fileUploadRequestDto);
     }
 

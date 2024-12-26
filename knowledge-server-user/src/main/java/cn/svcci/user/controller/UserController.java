@@ -33,6 +33,7 @@ public class UserController {
 
         return userService.login(request);
     }
+    // TODO: 用户信息修改:需要修改，因为无法正确处理头像格式问题
     // 用户信息修改
     @PutMapping("/profile")
     public Result<String> updateUserProfile(@RequestBody @Valid UserProfileUpdateRequestDto request) {
@@ -45,6 +46,13 @@ public class UserController {
     public Result<UserDto> queryUserProfile(@Valid UserQueryRequestDto request) {
 
         return userService.queryUserProfile(request);
+
+    }
+    //测试信息传递
+    @GetMapping("/userinfo")
+    public Result<String> queryUserInfo(@RequestHeader(value = "user-info", required = false) String userinfo) {
+
+        return Result.success(userinfo);
 
     }
     // 用户密码更改

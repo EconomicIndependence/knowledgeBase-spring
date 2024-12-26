@@ -1,6 +1,9 @@
 package cn.svcci.user.service.impl;
 
 import cn.svcci.api.dto.UserDto;
+import cn.svcci.common.utils.JwtTool;
+import cn.svcci.common.config.JwtConfig;
+import cn.svcci.common.utils.UserContext;
 import cn.svcci.user.converter.UserConverter;
 import cn.svcci.user.damain.dto.*;
 import cn.svcci.user.damain.entity.User;
@@ -10,11 +13,15 @@ import cn.svcci.user.service.UserRoleService;
 import cn.svcci.user.service.UserService;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import io.jsonwebtoken.Claims;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * <p>
@@ -28,13 +35,15 @@ public class  UserServiceImpl extends ServiceImpl<UserMapper, User> implements U
     private final PasswordEncoder passwordEncoder;
     private final UserMapper userMapper;
     private final UserRoleService userRoleService;
+    private final JwtConfig jwtConfig;
     // 构造函数
     @Autowired
-    public UserServiceImpl(UserMapper userMapper, PasswordEncoder passwordEncoder, UserRoleService userRoleService) {
+    public UserServiceImpl(UserMapper userMapper, PasswordEncoder passwordEncoder, UserRoleService userRoleService, JwtConfig jwtConfig) {
         this.userMapper = userMapper;
         this.passwordEncoder = passwordEncoder;
         //注册时添加默认角色
         this.userRoleService = userRoleService;
+        this.jwtConfig = jwtConfig;
     }
 
     // 注册用户
@@ -107,8 +116,16 @@ public class  UserServiceImpl extends ServiceImpl<UserMapper, User> implements U
             return Result.error("账号或密码错误");
         }
 
-        // 登录成功，返回jwt令牌
-        return Result.success("jwt令牌");
+        // 登录成功，创建Jwt令牌
+        // 1. 构建Jwt令牌信息
+        log.info("开始构建jwt秘钥");
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("userId", user.getId());
+        claims.put("username", user.getUsername());
+
+        String jwt = JwtTool.createJWT(jwtConfig.getSecret(), jwtConfig.getExpiration(), claims);
+        log.info("构建jwt秘钥成功，jwt={}", jwt);// 登录成功，返回jwt令牌
+        return Result.success(jwt);
     }
 
 
@@ -130,8 +147,10 @@ public class  UserServiceImpl extends ServiceImpl<UserMapper, User> implements U
 
         // 2. 更新用户信息
         User user = new User();
-        user.setId(requestDto.getId());  // 用户id
+//        user.setId(requestDto.getId());  // 用户id改为从线程中获取用户信息
+        user.setId(UserContext.getUserId());
 
+        user.setUsername(requestDto.getUsername());
         // 动态更新字段，如果前端没有传递某个字段，则不进行更新
         if (requestDto.getUsername() != null) {
             user.setUsername(requestDto.getUsername());
@@ -159,11 +178,10 @@ public class  UserServiceImpl extends ServiceImpl<UserMapper, User> implements U
     public Result<UserDto> queryUserProfile(UserQueryRequestDto request) {
 
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq("id", request.getUserId());  // 支持通过id查询
+        log.info("查询用户信息，登录状态：{}", UserContext.getUserId());
+        queryWrapper.eq("id", UserContext.getUserId());  // 支持通过id查询
 
         User user = userMapper.selectOne(queryWrapper);  // 查询单个用户
-
-
 
         // 如果找到了用户，返回结果，否则返回未找到的提示
         if (user != null) {
@@ -186,7 +204,7 @@ public class  UserServiceImpl extends ServiceImpl<UserMapper, User> implements U
     public Result<String> changePassword(UserChangePasswordRequestDto request) {
         // 创建 QueryWrapper，用于构建查询条件
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
-        queryWrapper.eq( "id", request.getId());  // 按用户id查询
+        queryWrapper.eq( "id", UserContext.getUserId());  // 按用户id查询
 
 
         User user = userMapper.selectOne(queryWrapper);

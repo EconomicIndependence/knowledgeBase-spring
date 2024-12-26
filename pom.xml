@@ -32,6 +32,8 @@
         <module>knowledge-server-user</module>
         <module>knowledge-server-file</module>
         <module>knowledge-api</module>
+        <module>knowledge-service-search</module>
+        <module>knowledge-gateway</module>
     </modules>
     <scm>
         <connection/>
@@ -83,8 +85,10 @@
 
     <!-- 父模块引入全局的依赖 -->
     <dependencies>
-
-
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-gateway</artifactId>-->
+<!--        </dependency>-->
 
 <!--        lombok依赖-->
         <dependency>

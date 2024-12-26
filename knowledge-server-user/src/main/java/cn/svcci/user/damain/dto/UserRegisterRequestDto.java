@@ -11,6 +11,7 @@ import lombok.Data;
 /**
  * <p>
  *     用户注册请求数据传输对象
+ *     id自动分配
  * </p>
  */
 @Data

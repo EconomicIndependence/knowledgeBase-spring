@@ -15,6 +15,6 @@ public class FileUploadRequestDto {
     @NotNull(message = "文件不能为空")
     private MultipartFile file; // 上传的文件
 
-    @NotNull(message = "用户id是必填项")
+//    @NotNull(message = "用户id是必填项") 重新在请求头中处理用户id
     private Long userId; // 上传者用户 ID
 }

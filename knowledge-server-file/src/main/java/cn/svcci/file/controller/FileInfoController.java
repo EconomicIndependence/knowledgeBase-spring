@@ -1,6 +1,7 @@
 package cn.svcci.file.controller;
 
 import cn.svcci.common.response.Result;
+import cn.svcci.common.utils.UserContext;
 import cn.svcci.file.damain.vo.DocumentsVO;
 
 import cn.svcci.file.service.FileInfoService;
@@ -17,13 +18,14 @@ import java.util.List;
 @Slf4j
 @RestController
 
-@RequestMapping("/files")
+@RequestMapping("api/files")
 public class FileInfoController {
 
     private final FileInfoService fileInfoService;
 
     @Autowired
     public FileInfoController(FileInfoService fileInfoService) {
+
         this.fileInfoService = fileInfoService;
     }
 
@@ -32,8 +34,8 @@ public class FileInfoController {
      *
      * 查询文件
      */
-    @GetMapping("/{fileId}")
-    public Result<DocumentsVO> getFile(@PathVariable("fileId") String fileId) {
+    @GetMapping("/{fileName}")
+    public Result<DocumentsVO> getFile(@PathVariable("fileName") String fileId) {
 
         return fileInfoService.getFileById(fileId);
     }
@@ -42,15 +44,18 @@ public class FileInfoController {
      * 查询全部文件接口
      */
     @GetMapping("/allFile")
-    public Result<List<DocumentsVO>> getAllFiles(Long userId) {
-
-        return fileInfoService.listAllFiles(userId);
+    public Result<List<DocumentsVO>> getAllFiles() {
+        return fileInfoService.listAllFiles(UserContext.getUserId());
     }
 
+    /**
+     * 修改文件元数据接口
+     * @param fileId
+     * @return
+     */
     @PutMapping("/updateFile")
-    public Result<String> putFileInfo(Long userId) {
-
-        return fileInfoService.putFileInfo(userId);
+    public Result<String> putFileInfo(String fileId) {
+        return fileInfoService.putFileInfo(fileId);
     }
 
     /**
