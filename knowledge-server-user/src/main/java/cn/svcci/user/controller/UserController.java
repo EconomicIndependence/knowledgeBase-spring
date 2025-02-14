@@ -48,13 +48,13 @@ public class UserController {
         return userService.queryUserProfile(request);
 
     }
-    //测试信息传递
-    @GetMapping("/userinfo")
-    public Result<String> queryUserInfo(@RequestHeader(value = "user-info", required = false) String userinfo) {
-
-        return Result.success(userinfo);
-
-    }
+//    //测试信息传递
+//    @GetMapping("/userinfo")
+//    public Result<String> queryUserInfo(@RequestHeader(value = "user-info", required = false) String userinfo) {
+//
+//        return Result.success(userinfo);
+//
+//    }
     // 用户密码更改
     @PutMapping("/password")
     public Result<String> changePassword(@Valid @RequestBody UserChangePasswordRequestDto request) {

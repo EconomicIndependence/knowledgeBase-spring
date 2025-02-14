@@ -187,6 +187,7 @@ public class  UserServiceImpl extends ServiceImpl<UserMapper, User> implements U
         if (user != null) {
             // 将用户信息转换为 DTO
             UserDto userDto = UserConverter.toUserDto(user);
+            log.info("查询用户信息成功，用户信息：{}", userDto);
             return Result.success(userDto);
         } else {
             return Result.error("未找到匹配的用户");

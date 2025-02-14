@@ -17,7 +17,8 @@ import java.time.LocalDateTime;
 public class FileInfoDo {
     @TableId
     private String fileId; // 文件唯一标识
-    private String userName; // 上传者用户 ID
+    private String userName; // 上传者用户昵称
+    private Long userId; // 上传者用户 ID
     private String fileName; // 文件名
     private String filePath; // 文件存储路径
     private String ossUrl; // 文件访问 URL

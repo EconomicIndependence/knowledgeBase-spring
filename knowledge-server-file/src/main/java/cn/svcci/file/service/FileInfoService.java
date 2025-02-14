@@ -20,11 +20,11 @@ public interface FileInfoService extends IService<FileInfoDo> {
     Result<DocumentsVO> getFileById(String fileId);
 
     /**
-     * 获取所有文件列表
+     * 分页查询文件列表
      *
      * @return 文件列表
      */
-    Result<List<DocumentsVO>> listAllFiles(Long userId);
+    Result<List<DocumentsVO>> listAllFiles(Integer pageNo, Integer pageSize);
 
     /**
      * 删除文件
@@ -37,5 +37,5 @@ public interface FileInfoService extends IService<FileInfoDo> {
     Result<String> putFileInfo(String fileId);
 
 
-
+    Result<String> downloadFileById(String fileId);
 }

@@ -29,23 +29,35 @@ public class FileInfoController {
         this.fileInfoService = fileInfoService;
     }
 
+    @GetMapping("/DownloadFile/{fileId}")
+    public Result<String> downloadFile(@PathVariable("fileId") String fileId) {
+
+        return fileInfoService.downloadFileById(fileId);
+    }
+
 
     /**
      *
-     * 查询文件
+     * 查询文件内容
      */
-    @GetMapping("/{fileName}")
-    public Result<DocumentsVO> getFile(@PathVariable("fileName") String fileId) {
+    @GetMapping("/{fileId}")
+    public Result<DocumentsVO> getFile(@PathVariable("fileId") String fileId) {
 
         return fileInfoService.getFileById(fileId);
+
     }
 
     /**
      * 查询全部文件接口
      */
     @GetMapping("/allFile")
-    public Result<List<DocumentsVO>> getAllFiles() {
-        return fileInfoService.listAllFiles(UserContext.getUserId());
+    public Result<List<DocumentsVO>> getAllFiles(
+            @RequestParam(defaultValue = "1") Integer pageNo, // 当前页，默认为1
+            @RequestParam(defaultValue = "10") Integer pageSize // 每页显示条数，默认为10
+    ) {
+        log.info("当前分页参数：pageNo = {}, pageSize = {}", pageNo, pageSize);
+        return fileInfoService.listAllFiles(pageNo, pageSize);
+//        pageNo, pageSize
     }
 
     /**
@@ -63,7 +75,7 @@ public class FileInfoController {
      * @param fileId 文件ID
      * @return 删除结果
      */
-    @DeleteMapping("/{fileId}")
+    @DeleteMapping("/deleteFile/{fileId}")
     public Result<String> deleteFile(@PathVariable("fileId") String fileId) {
         return fileInfoService.deleteFile(fileId);
     }

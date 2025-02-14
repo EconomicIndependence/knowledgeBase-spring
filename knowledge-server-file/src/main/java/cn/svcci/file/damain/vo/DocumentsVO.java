@@ -16,16 +16,10 @@ import java.time.format.DateTimeFormatter;
 @NoArgsConstructor  // 自动生成无参构造器
 @AllArgsConstructor  // 自动生成全参构造器
 public class DocumentsVO {
+    private String fileId; // 文件ID唯一标识
     private String fileName; // 文件名
     private String filePath; // 文件存储路径
     private String uploadTime; // 上传时间（格式化为字符串）
 
-    public DocumentsVO(String fileId, String fileName, LocalDateTime uploadTime) {
-        this.fileName = fileName;
-        this.fileName = fileName;
 
-        // 格式化日期为字符串
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        this.uploadTime = uploadTime.format(formatter);
-    }
 }

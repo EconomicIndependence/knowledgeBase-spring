@@ -4,6 +4,7 @@ import cn.svcci.file.damain.entity.FileInfoDo;
 import cn.svcci.file.damain.vo.DocumentsVO;
 import lombok.extern.slf4j.Slf4j;
 
+import java.time.format.DateTimeFormatter;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
@@ -21,9 +22,12 @@ public class FileInfoConverter {
             return null;
         }
         DocumentsVO documentsVO = new DocumentsVO();
+        documentsVO.setFileId(fileInfoDo.getFileId());
         documentsVO.setFileName(fileInfoDo.getFileName());
         documentsVO.setFilePath(fileInfoDo.getFilePath());
-        documentsVO.setUploadTime(fileInfoDo.getUploadTime().toString());
+//        documentsVO.setUploadTime(fileInfoDo.getUploadTime().toString());
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        documentsVO.setUploadTime(fileInfoDo.getUploadTime().format(formatter));
         log.info("转换完成: {}", documentsVO);
         return documentsVO;
     }

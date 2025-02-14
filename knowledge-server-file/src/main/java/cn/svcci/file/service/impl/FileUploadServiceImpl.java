@@ -3,6 +3,7 @@ package cn.svcci.file.service.impl;
 import cn.svcci.api.client.UserServiceFeignClient;
 import cn.svcci.api.dto.UserDto;
 import cn.svcci.common.response.Result;
+import cn.svcci.common.utils.UserContext;
 import cn.svcci.file.config.OssConfig;
 import cn.svcci.file.damain.dto.FileUploadRequestDto;
 import cn.svcci.file.damain.entity.FileInfoDo;
@@ -83,6 +84,7 @@ public class FileUploadServiceImpl implements FileUploadService {
             // 文件上传成功后，保存文件元数据
 
             FileInfoDo fileInfo = new FileInfoDo();
+            fileInfo.setUserId(UserContext.getUserId());
             fileInfo.setUserName(username);
             fileInfo.setFileName(file.getOriginalFilename());// 文件名
             fileInfo.setFileSize(file.getSize());// 文件大小

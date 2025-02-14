@@ -120,6 +120,13 @@
             <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
             <version>${mybatis-plus.version}</version>
         </dependency>
+<!--        // 引入mybatis-plus-extension依赖，该依赖包含了mybatis-plus的一些扩展功能。-->
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-jsqlparser</artifactId>
+            <version>${mybatis-plus.version}</version> <!-- 确保版本和 MyBatis Plus 主包一致 -->
+        </dependency>
+
 <!--        jjwt相关依赖-->
         <dependency>
             <groupId>io.jsonwebtoken</groupId>
